@@ -1,0 +1,57 @@
+package allKlasseImp;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import allInterfaces.IKundenFunction;
+import andereKlasse.Kunde;
+import au.com.bytecode.opencsv.CSVWriter;
+
+public class KundenFunctionImp implements IKundenFunction {
+	public int id =0;
+	
+	
+	@Override
+	public int legeKundeAn(Kunde kunde) {
+		File file = new File("C:\\Users\\mafan\\Desktop\\TransferArgent\\Customer.csv");
+		
+		try {
+			FileWriter outputfile = new FileWriter(file);
+			CSVWriter writer = new CSVWriter(outputfile);
+			String[] kundeTemp = {String.valueOf(id), kunde.getName(), kunde.getEmail()};
+			writer.writeNext(kundeTemp);
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		/*String[] kundeTemp = {String.valueOf(id), kunde.getName(), kunde.getEmail()};
+		List<String[]> kundeArr = new ArrayList<>();
+		kundeArr.add(kundeTemp);
+		
+		try(CSVWriter writer = new CSVWriter(new FileWriter("C:\\Users\\mafan\\Desktop\\TransferArgent\\Customer.csv"))){
+			writer.writeAll(kundeArr);
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}*/
+		id++;	
+		return id;
+	}
+
+	@Override
+	public void loescheKunde(String kundeId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void kundeAnmelden(Kunde kunde) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

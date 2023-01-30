@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\mafan\Desktop\Mel\TransferArgent\.metadata\.plugins\org.eclipse.jdt.core
+3327173485.index
+1167275426.index
+842749855.index
+1657330681.index
+1865797976.index

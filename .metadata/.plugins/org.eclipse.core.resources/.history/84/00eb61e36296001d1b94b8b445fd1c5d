@@ -1,0 +1,36 @@
+package andereKlasse;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+
+import allInterfaces.IKundenFunction;
+import allKlasseImp.KundenFunctionImp;
+
+public class MainKlasse {
+	@Inject
+	static
+	Provider<IKundenFunction> kundenFunction;
+
+	public static void main(String[] args) {
+	 KundenFunctionImp test = new KundenFunctionImp();
+			
+		Kunde neuKunde = new Kunde();
+		Kunde neuKunde1 = new Kunde();
+		neuKunde.setName("lauria");
+		neuKunde.setEmail("Kapoho");
+		test.legeKundeAn(neuKunde);
+		
+		neuKunde1.setName("lala");
+		neuKunde1.setEmail("Kapoho");
+		
+		test.legeKundeAn(neuKunde1);
+		System.out.println("done");
+		/*try {
+			((IKundenFunction) kundenFunction).legeKundeAn(neuKunde);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+
+	}
+
+}
