@@ -1,0 +1,69 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>S'enregistrer</title>
+        <link rel="stylesheet" href="senregistrer.css">
+    </head>
+    <body>
+        <div class = "signInUp">
+            <form method="post" action="/Senregistrer.html" target="_self"></form>
+                <div class = "col-7 sign signIn">
+                    <div class="divSignIn">
+                        <h1>Se connecter à mon compte</h1>
+                        <input type="email" id="email" name="email" placeholder="Email"><br>
+                        <input type="password" id="mdp" name="mdp" placeholder="Mot de passe"><br>
+                    </div>
+                    <input type="submit" value="Se connecter">
+                </div>
+            </form>
+            <form method="post" action="/Senregistrer.html" target="_self"></form>
+            <div class = "col-5 sign signUp">
+                
+                    <h1>Créer mon compte</h1>
+                    <div class ="divsignUp">
+                        <div class divsignUpCol-25>
+                              <label for="nonPrenom">Nom et Prenom</label>
+                        </div>
+                        <div class divsignUpCol-75>
+                           <input type="text" id="nonPrenom" name="nonPrenom" ><br> 
+                        </div>
+                    </div>
+                    <div class ="divsignUp">
+                        <div class divsignUpCol-25>
+                            <label for="pays">Pays de residence</label>
+                        </div>
+                        <div class divsignUpCol-75>
+                             <select id="pays" name="pays">
+                            <optgroup label="Europe">
+                                <option value="france">France</option>
+                                <option value="italie">Italie</option>
+                                <option value="allemagne" selected>Allemagne</option>
+                            </optgroup>
+                        </select><br>
+                        </div>
+                    </div>
+                    <div class ="divsignUp">
+                        <div class divsignUpCol-25>
+                              <label for="email">Email</label>
+                        </div>
+                        <div class divsignUpCol-75>
+                             <input type="email" id="email" name="email"><br>
+                        </div>
+                    </div>
+                    <div class ="divsignUp">
+                        <div class divsignUpCol-25>
+                            <label for="mdp">Mot de passe</label>
+                        </div>
+                        <div class divsignUpCol-75>
+                          <input type="password" id="mdp" name="mdp"><br>  
+                        </div>
+                    </div>
+                    <div class ="divsignUp">
+                       <input type="submit" value="S'enregistrer"> 
+                    </div>
+        </div>
+    </form>
+        </div>
+    </body>
+</html> 
