@@ -1,0 +1,73 @@
+package allKlasseImp;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import allInterfaces.IKundenFunction;
+import andereKlasse.Kunde;
+import au.com.bytecode.opencsv.CSVWriter;
+
+public class KundenFunctionImp implements IKundenFunction {
+	public int id =0;
+	
+	
+	@Override
+	public int legeKundeAn(Kunde kunde) {
+		File file = new File("C:\\Users\\mafan\\Desktop\\TransferArgent\\Customer.csv");
+		
+		try {
+			FileWriter outputfile = new FileWriter(file, true);
+			CSVWriter writer = new CSVWriter(outputfile);
+			String[] kundeTemp = {String.valueOf(id), kunde.getName(), kunde.getEmail()};
+			writer.writeNext(kundeTemp);
+			writer.close();
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		id++;	
+		return id;
+	}
+
+	@Override
+	public void loescheKunde(String kundeId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void kundeAnmelden(Kunde kunde) {
+		
+}
+	
+	public void kundelesen() {
+	int iterator;
+		String line ="";
+		String splitBy = ",";
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\mafan\\Desktop\\TransferArgent\\Customer.csv"));
+			while ((line= br.readLine()) != null ) {
+				String[] kunde = line.split(splitBy);
+				if(kunde[0].equals("\"0\"") && kunde[1].equals("\"Ndjoumessi\"") ) {
+					System.out.println("Kunde [ id = " + kunde[0] + ", name = " + kunde[1] + ", email = "+ kunde[2]);
+					break;
+				}else {
+					
+				}
+			}
+			if(iterator == 0) {
+				System.out.println("Keine kunde Vorhanden");
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+
+	}
+}
